@@ -1,0 +1,39 @@
+{
+    "name": "matthtavares/php-instagram-crawler",
+    "description": "A simple PHP Crawler for Instagram public API.",
+    "type": "library",
+    "homepage": "https://github.com/matthtavares/php-instagram-crawler",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Mateus Tavares",
+            "email": "contato@mateustavares.com.br",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "php",
+        "instagram",
+        "http",
+        "crawler"
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "symfony/var-dumper": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "MatthTavares\\Instagram\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MatthTavares\\Instagram\\": "test/"
+        }
+    }
+}
