@@ -18,7 +18,7 @@ class CrawlerTest extends TestCase
 
     protected function setUp() : void
     {
-        $this->crawler = new Crawler('46853347619%3AKxMfiPuz9mWWxD%3A15');
+        $this->crawler = new Crawler('26590779373%3AfqYl6Nks9wvbbK%3A10');
     }
 
     public function testGetMediaByTag()
@@ -30,7 +30,7 @@ class CrawlerTest extends TestCase
 
     public function testGetMediaByLocation()
     {
-        $media = $this->crawler->getMediaByLocation(225963881);
+        $media = $this->crawler->getMediaByLocation(213472429);
         file_put_contents(__DIR__.'/cache/testGetMediaByLocation.json', json_encode($media));
         $this->assertGreaterThan(0, count($media));
     }
@@ -92,16 +92,16 @@ class CrawlerTest extends TestCase
 
     public function testGetLocation()
     {
-        $location = $this->crawler->getLocation(225963881);
+        $location = $this->crawler->getLocation(213472429);
         file_put_contents(__DIR__.'/cache/testGetLocation.json', json_encode($location));
         $this->assertInstanceOf(Location::class, $location);
-        $this->assertEquals(225963881, $location->getId());
-        $this->assertEquals('recife-pernambuco', $location->getSlug());
+        $this->assertEquals(213472429, $location->getId());
+        $this->assertEquals('joao-pessoa-brazil', $location->getSlug());
         $this->assertTrue($location->hasCoordinate());
-        $this->assertEquals('Recife - Pernambuco', $location->getName());
+        $this->assertEquals('João Pessoa, Brazil', $location->getName());
         $this->assertInstanceOf(Coordinate::class, $location->getCoordinate());
-        $this->assertEquals(-8.67597444337, $location->getCoordinate()->getLatitude());
-        $this->assertEquals(-35.5767717627, $location->getCoordinate()->getLongitude());
+        $this->assertEquals(-7.1207, $location->getCoordinate()->getLatitude());
+        $this->assertEquals(-34.8627, $location->getCoordinate()->getLongitude());
     }
 
     public function testGetTag()
